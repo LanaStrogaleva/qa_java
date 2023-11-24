@@ -3,11 +3,9 @@ package com.example;
 import java.util.List;
 
 public class AlexLion extends Lion{
-    //static boolean hasMane;
     Feline feline;
-    public AlexLion(Feline feline) {
-        super(feline);
-        hasMane = true;
+    public AlexLion(Feline feline) throws Exception {
+        super(feline, "Самец");
     }
 
     public List<String> getFriends() {

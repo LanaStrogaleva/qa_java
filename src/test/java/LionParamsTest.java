@@ -1,12 +1,16 @@
+import com.example.Feline;
 import com.example.Lion;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.mockito.Mock;
 
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class LionParamsTest {
+
+    Feline feline;
 
     @Parameterized.Parameter
     public String sex;
@@ -24,7 +28,7 @@ public class LionParamsTest {
 
     @Test
     public void doesHaveManeTest() throws Exception {
-        Lion lion = new Lion(sex);
+        Lion lion = new Lion(feline, sex);
         boolean actual = lion.doesHaveMane();
         assertEquals(expected, actual);
     }
